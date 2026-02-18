@@ -19,13 +19,13 @@ import java.util.stream.Collectors;
 public class MovieServiceImpl implements MovieService {
 
     private final MovieRepository movieRepository;
-    private final MovieMapper movieMapper; // ← iniettato!
+    private final MovieMapper movieMapper;
 
     @Override
     public List<MovieDTO> getAllMovies() {
         return movieRepository.findAll()
                 .stream()
-                .map(movieMapper::toDTO) // ← usa il mapper
+                .map(movieMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
